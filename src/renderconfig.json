@@ -1,0 +1,36 @@
+{
+  "models" : [
+    {
+      "name" : "vgg",
+      "path" : "../models/vgg_model.hdf5",
+      "type" : "interval_vgg"
+    },
+    {
+      "name" : "vgg_3dcnn",
+      "path" : "../models/vgg_3dcnn_model.hdf5",
+      "type" : "interval_vgg"
+    },
+    {
+      "name" : "3dcnn",
+      "path" : "../models/c3d_model.hdf5",
+      "type" : "3dcnn"
+    },
+    {
+      "name" : "hmap",
+      "path" : "../models/heatmaps_model.hdf5",
+      "type" : "box5"
+    },
+    {
+      "name" : "audio",
+      "path" : "../models/audio_model.hdf5",
+      "type" : "audio",
+      "minimax" : "../models/audio_minimax.json"
+    }
+    {
+      "name" : "netdetect",
+      "score_class": [0, 2],
+      "path" : "../models/net-detect_model.pkl",
+      "type" : "lr_frame_torch"
+    }
+  ]
+}
