@@ -1,7 +1,11 @@
 Action recognition in sports (soccer, shots)
 ============
 
-This is the official repository for the project *Action Recognition in Sports: soccer, shots*, jointly developed by Deltatre and Microsoft. It's a prototype project, so please keep in mind that code is not cleaned up and not so much optimized. It may also not work on your machine (but should do on DSVMs equipped with GPUs).
+This is the official repository for the project *Action Recognition in Sports: soccer, shots*, jointly developed by Deltatre and Microsoft. It's a work-in-progress prototype project, so please keep in mind that the code may contain bugs, it is not optimized and it has not been refactored yet.
+
+Everything has been developed on Microsoft Azure DSVMs (Windows) equipped with GPUs.
+
+Have a look at README.md and notebooks files in the project, to get more info on how things work.
 
 Project Organization
 ------------
@@ -9,36 +13,33 @@ Project Organization
     ├── LICENSE
     ├── README.md          <- The top-level README for developers using this project.
     ├── data
-    │   ├── interim        <- Intermediate data that has been transformed.
-    │   ├── processed      <- The final, canonical data sets for modeling.
-    │   └── raw            <- The original, immutable data dump.
+    │   ├── processed      <- The extracted clips dataset, used for model training.
+    │   └── raw            <- The source original dataset (full matches and annotations).
     |
     ├── models             <- Trained and serialized models
     │
     ├── notebooks          <- Exploratory Jupyter notebooks
     │
-    ├── requirements.txt   <- The requirements file for reproducing the dev environment, e.g.
-    │                         generated with `pip freeze > requirements.txt`
+    ├── requirements.txt   <- The requirements file for reproducing the dev environment
     │
-    ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
     └── src                <- Source code for use in this project.
-                              Scripts to download or generate data, features for modeling,
+                              Scripts to generate data, features for modeling,
                               train models and then use trained models to make
                               predictions
 
 Preliminar configuration
 ------------
 
-Prior to run any of the scripts / notebooks, create the following files (excluded with .gitignore), to avoid overriding personal preferences and settings.
+Prior to run any of the scripts / notebooks, create the following file (excluded with .gitignore), to avoid overriding personal preferences and settings.
 
 ## config.py
 
 Create `/src/config.py` file to configure data paths and settings for data processing:
 
 ``` python
-base_dir = '../data' # input data root directory
-source_dir = '../data/raw' # input data directory  (where matches.json, marks.jsonl and video files are)
-data_dir = '../data/processed' # where data for all ML tasks are
+base_dir = '../data'           # input data root directory (specify full-path)
+source_dir = '../data/raw'     # input data directory  (where matches.json, marks.jsonl and video files are; specify full-path)
+data_dir = '../data/processed' # where data for all ML tasks are (specify full-path)
 
 video_width = 256
 video_size = (256,144)
@@ -51,6 +52,15 @@ audio_rate = 44100
 
 scene_detection_file = "scene.changes.pkl"
 ```
+
+--------
+
+License
+--------
+
+Copyright (C) 2019 Deltatre, Microsoft Corporation.
+
+Licensed under the [MIT License](./LICENSE).
 
 --------
 

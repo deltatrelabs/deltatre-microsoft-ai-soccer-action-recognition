@@ -2,8 +2,7 @@
 
 ## Data
 
-Creating clips dataset from full matches video
-**NOTE: each full video should be ending with `.full.mp4`.
+Creating clips dataset from full matches videod
 
   **./create_clips.py**
 

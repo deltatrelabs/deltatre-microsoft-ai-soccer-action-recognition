@@ -1,6 +1,6 @@
 # create_clips.py
 
-This script can be used to cutting out clips with shots and no-shots + attacks (shots nearby the goal area or in other parts of the fields, to be used as negative examples) and putting them into `data_dir`.
+This script can be used to cutting out clips with shots and no-shots + attacks (shots nearby the goal area or in other parts of the fields, to be used as negative examples) and putting them into `source_dir`.
 
 ### Worklow
 
